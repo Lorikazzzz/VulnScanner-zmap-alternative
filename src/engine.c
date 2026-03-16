@@ -129,6 +129,9 @@ void run_scan(scanner_config_t *config) {
     }
     
     int original_method = config->scan_method;
+    if (config->icmp_prescan) {
+        config->scan_method = SCAN_METHOD_ICMP_ECHO;
+    }
     
     memset(&stats, 0, sizeof(stats_t));
     stats.total_packets = total_packets;
