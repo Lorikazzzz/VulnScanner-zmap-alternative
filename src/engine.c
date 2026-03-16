@@ -128,6 +128,8 @@ void run_scan(scanner_config_t *config) {
         atomic_init(&icmp_sender_done, 0);
     }
     
+    int original_method = config->scan_method;
+    
     memset(&stats, 0, sizeof(stats_t));
     stats.total_packets = total_packets;
     thread_context_t scan_ctx[MAX_THREADS];
