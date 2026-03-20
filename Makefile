@@ -25,5 +25,5 @@ clean:
 	rm -f $(OBJS) $(TARGET)
 
 install:
-	cp $(TARGET) /usr/local/bin/
-	chmod +x /usr/local/bin/$(TARGET)
+	cp $(TARGET) /usr/bin/
+	chmod +x /usr/bin/$(TARGET)
