@@ -120,6 +120,7 @@ void run_scan(scanner_config_t *config) {
     for (int i = 0; i < config->num_port_ranges; i++) {
         total_ports += config->port_ranges[i].end - config->port_ranges[i].start + 1;
     }
+    config->is_multiport = (total_ports > 1);
     uint64_t total_packets = total_ips * total_ports;
     uint64_t full_start = 0, full_end = total_packets;
     if (config->shards > 1) {
